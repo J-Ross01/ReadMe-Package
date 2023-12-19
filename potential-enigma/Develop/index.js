@@ -1,65 +1,63 @@
-// TODO: Include packages needed for this application
-const inquire = require('inquirer');
-const fs = require('fs'); 
-const generateMarkdown = require('./utils/generateMarkdown');
-// TODO: Create an array of questions for user input
-const questions = [
+const inquirer = require('inquirer'); //'inquirer' used for command line questions. 
+const fs = require('fs'); //for file system operations.
+const generateMarkdown = require('./utils/generateMarkdown'); //'generateMarkdown' is to create the markdown text
+
+const questions = [ //Array of questions for inquirer to use in the command line. 
   {
-    type: 'input',
-    name: 'title',
-    message: 'Input the title of your project.'
+    type: 'input',//specifies the type of prompt to be displayed. 
+    name: 'title',//Key to the answer the prompt is asking. 
+    message: 'Provide a title for your project:'//Prompt question/command. 
   },
   {
     type: 'input',
-    name: 'Description',
-    message: 'Enter a short description of the project.'
+    name: 'description',
+    message: 'Provide a short description of your project:'
   },
   {
     type: 'input',
-    name: 'Table of Contents',
-    message: 'Input links to corresponding sections of your README.'
+    name: 'installation',
+    message: 'What are the steps to install your project?'
   },
   {
     type: 'input',
-    name: 'Installation',
-    message: 'Explain the steps neede to install your project.'
+    name: 'usage',
+    message: 'Give examples and instructions on how to use this application:'
   },
   {
     type: 'input',
-    name: 'Usage',
-    message: 'Give examples for using this project.'
+    name: 'collaborations',
+    message: 'Give examples and instructions on how to contribute to the application:'
+  },
+  {
+    
+    type: 'input',
+    name: 'test',
+    message: 'Give examples and instructions on how to test this application:'
   },
   {
     type: 'input',
-    name: 'Credits',
-    message: 'Give links to sources on how you went about creating your projecet.'
+    name: 'credits',
+    message: 'List your sources/collaborators:'
   },
   {
-    type: 'input',
-    name: 'Tests',
-    message: 'Give examples for testing your project.'
-  },
-  {
-    type: 'input',
-    name: 'License:',
+    type: 'list', 
+    name: 'license',
     message: 'Choose the license for your project:',
-      choices: ['MIT', 'GPLv3', 'Apache', 'ISC', 'None']
+    choices: ['MIT', 'GPLv3', 'Apache', 'ISC', 'None']//drop down list for choices of licenses.
   },
 ];
 
-// TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, generateMarkdown(data), (err) => {
-        if (err) console.log(err);
-        else console.log('Created README file!');
+    fs.writeFile(fileName, generateMarkdown(data), (err) => { //will write data to fileName parameter. 
+        if (err) console.log(err); // If statement incase of an error, which will be logged to the console.
+        else console.log('Created README file!'); // If cleared of errors it should log 'Created README file!'.
     });
 }
 
-// TODO: Create a function to initialize app
-function init() {
-    inquirer.prompt(questions).then((answers) => {
-      writeToFile('README.md', answers);
+function init() { // Initializes application
+    inquirer.prompt(questions).then((answers) => { // When prompt questions 'writeFile' is called with a 'README.md' file name. 
+      writeToFile('README.md', answers);// Answers are written to the 'README.md' file.
     });
   }
-// Function call to initialize app
+
 init();

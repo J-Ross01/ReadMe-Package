@@ -1,25 +1,19 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  if (!license) return '';
-  return `!(https://img.shields.io/badge/license-${license}-blue.svg)`;
-}
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-  if (!license) return '';
-  return `(https://opensource.org/licenses/${license})`;
+function renderLicenseBadge(license) { // Function to create license badge with shields.io service.
+  if (!license) return ''; // If no license is provided, return an empty string.
+  return `![License](https://img.shields.io/badge/license-${license}-blue.svg)`;// Return a Markdown-formatted string to a badge image for the license. 
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
-  if (!license) return '';
-  return `## License\nThis project is licensed under the ${license} license. ${renderLicenseLink(license)}`;
+function renderLicenseLink(license) { //Function to create license link to the official page of the provided license.
+  if (!license) return ''; // If no license is provided, return an empty string.
+  return `[License](https://opensource.org/licenses/${license})`;
 }
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
+function renderLicenseSection(license) { // Function to create license section in README.md file.
+  if (!license) return '';// If no license is provided, return an empty string.
+  return `## License\nThis project is licensed under the ${license} license. ${renderLicenseLink(license)}`; // A markdown-formatted string containing the license name and a link to its page.
+}
+
+function generateMarkdown(data) { // Function that generates the Markdown content for the README.
   return `# ${data.title}
 
   ## Description

@@ -1,5 +1,5 @@
 
-# Project: README Generator
+# README Generator
 
 ## Description
 - This Node.js application will generate a README.md file based on the users input when answereing prompted questions from the command line. 
@@ -24,8 +24,7 @@
 - https://opensource.org/licenses/%7Blicense
 - https://github.com/coding-boot-camp/potential-enigma
 - https://www.youtube.com/watch?v=9YivEQFpmHQ
-![Module 9 mini project](<Screenshot 2023-12-18 191932.png>): I referenced this function for generating the prompt questions and displaying the prompted questions in the command line.
-
+- ![Module 9 mini project](<Screenshot 2023-12-18 191932.png>): I referenced this function for generating the prompt questions and displaying those prompted questions in the command line.
 
 ## License
 - This project is released under the MIT license

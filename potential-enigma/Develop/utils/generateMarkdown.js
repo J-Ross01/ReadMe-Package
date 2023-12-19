@@ -24,7 +24,10 @@ function generateMarkdown(data) { // Function that generates the Markdown conten
   - [Usage](#usage)
   - [Credits](#credits)
   - [License](#license)
-  
+  - [Features](#features)
+  - [How to Contribute](#contributing)
+  - [Tests](#tests)
+
   ## Installation
   ${data.installation}
   

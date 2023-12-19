@@ -25,14 +25,20 @@ const questions = [ //Array of questions for inquirer to use in the command line
   },
   {
     type: 'input',
-    name: 'collaborations',
+    name: 'contributing',
     message: 'Give examples and instructions on how to contribute to the application:'
   },
   {
     
     type: 'input',
-    name: 'test',
+    name: 'tests',
     message: 'Give examples and instructions on how to test this application:'
+  },
+  {
+    
+    type: 'input',
+    name: 'features',
+    message: 'What are some features about this application?:'
   },
   {
     type: 'input',
